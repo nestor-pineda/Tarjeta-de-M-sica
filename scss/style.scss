@@ -1,0 +1,112 @@
+////////////////////////
+// Color definition
+///////////////////////
+$myColor1: #906136;
+$myColor2: #000;
+$myColor3: #7280a7;
+$myColor4: #fff;
+$myColor5: #a07853;
+$myFontFamily: "Ubuntu", sans-serif;
+
+////////////////////////
+// Variables modificadas
+///////////////////////
+$primary: $myColor1;
+$card-border-radius: 15px;
+$enable-shadows: true;
+$btn-box-shadow: 0 10px 25px rgba(175, 135, 99, 1);
+$btn-border-radius: 14px;
+$info: #e8e8f7;
+$alert-border-radius: 14px;
+$card-border-width: 0px;
+
+@import "../libs/bootstrap/scss/bootstrap.scss";
+
+body {
+  background-color: #ffe3c9;
+  background-image: url(../img/animated-shape-bg-desktop.svg);
+  background-size: inherit;
+  background-repeat: no-repeat;
+}
+
+.card {
+  width: 26.75rem;
+  .card-body {
+    .card-title {
+      font-size: 1.75rem;
+      font-family: $myFontFamily;
+      font-weight: Bold;
+    }
+    .card-text {
+      font-family: $myFontFamily;
+      font-weight: 300;
+      color: $myColor3;
+      font-size: 1rem;
+    }
+    .alert {
+      font-family: $myFontFamily;
+      height: 50px;
+      p {
+        font-size: 1.125rem;
+        font-weight: bold;
+        color: $myColor2;
+        span {
+          color: $myColor3;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $myColor1;
+        transition: opacity 0.2s;
+        font-size: 1rem;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .d-grid {
+      .btn {
+        text-align: center;
+        padding: 10px 0;
+        font-weight: Bold;
+        font-family: $myFontFamily;
+        color: $myColor4;
+      }
+      .btn-primary {
+        &:hover {
+          background-color: $myColor5;
+          border-color: $myColor5;
+        }
+      }
+    }
+    .card-link {
+      text-decoration: none;
+      color: $myColor3;
+      font-family: $myFontFamily;
+      font-size: 1.125rem;
+      text-align: center;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  body {
+    background-image: url(../img/animated-shape-bg-mobile.svg);
+  }
+  .card {
+    width: 20rem;
+    .card-body {
+      .card-title {
+        font-size: 1.375rem;
+      }
+      .alert {
+        p {
+          font-size: 1rem;
+        }
+        a {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
